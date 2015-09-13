@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YouTube UI framework</title>
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="css/yt-framework.css"/>
+
+		<!-- Required scripts -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/jquery-ui-config.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/toggle-buttons.js"></script>
+
+    	<!-- Prettify code -->
+		<link rel="stylesheet" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css">
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+    <style>
+    	pre.prettyprint, code {
+    		border-color:#EBEBEB;
+    		border:1px dashed #BBBBBB;
+    		border-left:5px solid #EBEBEB;
+    	}
+    </style>
+	</head>
+	<body onload="prettyPrint()">
+		<ul class="yt-navigation-list" style="position:fixed;width:12%;overflow:hidden">
+			<li class="yt-nav-list-header">Components</li>
+			<li><a href="#typography">Typography</a></li>
+			<li><a href="#buttons">Buttons</a></li>
+			<li><a href="#buttonsgroups">Button groups</a></li>
+			<li><a href="#dropdowns">Dropdowns</a></li>
+			<li><a href="#labels">Labels</a></li>
+			<li><a href="#inputs">Inputs</a></li>
+			<li><a href="#contentboxes">Content boxes</a></li>
+			<li><a href="#tooltips">Tooltips</a></li>
+			<li><a href="#progressbars">Progress bars</a></li>
+			<li><a href="#scrollbars">Scrollbars</a></li>
+			<li><a href="#checkboxes">Checkboxes</a></li>
+			<li><a href="#radios">Radios</a></li>
+			<li><a href="#notifications">Notifications</a></li>
+			<li><a href="#thumbs">Thumbnails</a></li>
+			<li><a href="#navigation">Navigation</a></li>
+			<li><a href="#tabs">Tabs</a></li>
+		</ul>
+		</div>
+		<div style="float:right;width:85%">
+		<h1 id="typography">Typography</h1>
+		<div class="yt-container">
+			<h1><i>h1</i> Heading 1</h1>
+			<h2><i>h2</i> Heading 2</h2>
+			<h3><i>h3</i> Heading 3</h3>
+			<h4><i>h4</i> Heading 4</h4>
+			<h5><i>h5</i> Heading 5</h5>
+			<h6><i>h6</i> Heading 6</h6>
+			<p><i>p</i> Paragraph</p>
+			<span><i>span</i> Some text</span>
+			<p><a href="#"><i>a</i> A link</a></p>
+		</div>
+		<h1 id="buttons">Buttons</h1>
+		<p>Use <code>class="yt-button"</code> to make buttons (works on links, buttons and inputs).</p>
+		<p>
+          Colored buttons can be created by adding the
+          <code>yt-button-blue</code> or <code>yt-button-dark</code> class to your button.
+        </p>
+		<p>
+          Disabled buttons can be made adding the HTML 5
+          <code>disabled</code> attribute to your button.
+        </p>
+		<div class="yt-container">
+			<button class="yt-button">Upload</button>
+			<button class="yt-button yt-button-blue">Upload</button>
+			<button class="yt-button yt-button-red">Upload</button>
+			<button class="yt-button yt-button-dark">Upload</button>
+			<button class="yt-button" disabled>Disabled command</button>
+		</div>
+		<pre class="prettyprint">
+&lt;button class="yt-button">Upload&lt;/button>
+&lt;button class="yt-button yt-button-blue">Upload&lt;/button>
+&lt;button class="yt-button yt-button-dark">Upload&lt;/button>
+&lt;button class="yt-button" disabled>Disabled command&lt;/button>
+		</pre>
+		<p>You can also make small buttons by adding the classes <code>yt-button</code> and <code>yt-button-small</code>.</p>
+		<p>The framework also gives you the ability to make tiny buttons by adding the classes <code>yt-button</code> and <code>yt-button-tiny</code></p>
+		<div class="yt-container">
+			<button class="yt-button yt-button-small">Small button</button>
+			<button class="yt-button yt-button-tiny">Tiny button</button>
+		</div>
+		<pre class="prettyprint">
+&lt;button class="yt-button yt-button-small">Small button&lt;/button>
+&lt;button class="yt-button yt-button-tiny">Tiny button&lt;/button>
+		</pre>
+		<h1 id="buttonsgroups">Button groups</h1>
+		<h6>Horizontal</h6>
+		<p>To make groups, just wrap the buttons with a div with the class <code>yt-button-group</code>.</p>
+		<div class="yt-container">
+			<div class="yt-button-group">
+				<button class="yt-button">Upload</button>
+				<button class="yt-button yt-button-blue">Upload</button>
+				<button class="yt-button yt-button-dark">Settings</button>
+				<button class="yt-button">Upload</button>
+			</div>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button yt-button-blue">Upload&lt;/button>
+	&lt;button class="yt-button yt-button-dark">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+&lt;/div>
+		</pre>
+		<h6>Vertical</h6>
+		<div class="yt-container">
+			<div class="yt-button-group vertical">
+				<button class="yt-button">Long text</button>
+				<button class="yt-button">Longer text</button>
+				<button class="yt-button">Longest text</button>
+			</div>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group vertical">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+&lt;/div>
+		</pre>
+		<h1>Single Toggle</h1>
+		<button class="yt-button yt-toggle-button">Upload</button>
+		<pre class="prettyprint">
+&lt;button class="yt-button yt-toggle-button">Upload&lt;/button>
+		</pre>
+		<h1>Checkbox buttons</h1>
+		<div class="yt-container">
+			<div class="yt-button-group yt-toggle-buttons">
+				<button class="yt-button">Upload</button>
+				<button class="yt-button">Upload</button>
+				<button class="yt-button">Upload</button>
+			</div>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group yt-toggle-buttons">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+&lt;/div>
+		</pre>
+		<h1>Radio buttons</h1>
+		<div class="yt-container">
+			<div class="yt-button-group yt-radio-buttons">
+				<button class="yt-button">Upload</button>
+				<button class="yt-button">Upload</button>
+				<button class="yt-button">Upload</button>
+			</div>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group yt-radio-buttons">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button">Upload&lt;/button>
+&lt;/div>
+		</pre>
+		<h1 id="dropdowns">Dropdowns</h1>
+		<p>You can easily make a dropdown.</p>
+		<div class="yt-container">
+			<div class="yt-button-group">
+				<button class="yt-button">Upload</button>
+				<button class="yt-button dropdown-toggle"></button>
+					<ul class="yt-dropdown-menu">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button yt-button-blue dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button yt-button-dark dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+						<li class="divider"></li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+		</div>
+		<h6>To make the dropdown separated from the button (like the first example).</h6>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button dropdown-toggle">&lt;/button>
+	&lt;ul class="yt-dropdown-menu">
+		&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+		&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;/ul>
+&lt;/div>
+		</pre>
+		<h6>The button is the dropdown (like the other examples).</h6>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;button class="yt-button dropdown-toggle">Upload&lt;/button>
+	&lt;ul class="yt-dropdown-menu">
+		&lt;li class"yt-dropdown-menu-item">Action&lt;/li>
+		&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;/ul>
+&lt;/div>
+		</pre>
+		<h1>Dropup</h1>
+		<div class="yt-container">
+			<div class="yt-button-group">
+				<button class="yt-button">Upload</button>
+				<button class="yt-button dropdown-toggle"></button>
+					<ul class="yt-dropdown-menu dropup">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu dropup">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button yt-button-blue dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu dropup">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+			<div class="yt-button-group">
+				<button class="yt-button yt-button-dark dropdown-toggle">
+					Upload
+				</button>
+					<ul class="yt-dropdown-menu dropup">
+						<li class="yt-dropdown-menu-item">Action</li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+						<li class="divider"></li>
+						<li class="yt-dropdown-menu-item">Another action</li>
+					</ul>
+			</div>
+		</div>
+		<h6>To make the dropdown separated from the button (like the first example).</h6>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;button class="yt-button">Upload&lt;/button>
+	&lt;button class="yt-button dropdown-toggle">&lt;/button>
+	&lt;ul class="yt-dropdown-menu dropup">
+		&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+		&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;/ul>
+&lt;/div>
+		</pre>
+		<h6>The button is the dropdown (like the other examples).</h6>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;button class="yt-button dropdown-toggle">Upload&lt;/button>
+	&lt;ul class="yt-dropdown-menu dropup">
+		&lt;li class"yt-dropdown-menu-item">Action&lt;/li>
+		&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;/ul>
+&lt;/div>
+		</pre>
+		<h1>Stand alone dropdown</h1>
+		<p>Just a dropdown, without it's toggle.</p>
+		<ul class="yt-dropdown-menu">
+			<li class="yt-dropdown-menu-item">Action</li>
+			<li class="yt-dropdown-menu-item">Another action</li>
+			<li class="divider"></li>
+			<li class="yt-dropdown-menu-item">Another action</li>
+		</ul>
+		<pre class="prettyprint">
+&lt;ul class="yt-dropdown-menu">
+	&lt;li class"yt-dropdown-menu-item">Action&lt;/li>
+	&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;li class="divider">&lt;/li>
+	&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+&lt;/ul>
+		</pre>
+		<h1>With submenus</h1>
+		<p>You can also make submenus out of dropdowns. You can also make multiple submenus.</p>
+		<div style="float:left;margin:5px">
+		<h6>Default</h6>
+		<ul class="yt-dropdown-menu">
+			<li class="yt-dropdown-menu-item">Action</li>
+			<li class="yt-dropdown-menu-item">Another action</li>
+			<li class="yt-dropdown-menu-item yt-dropdown-submenu">
+				More actions
+				<ul class="yt-dropdown-menu">
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+		<div style="float:left;margin:5px">
+		<h6>Dropup</h6>
+		<ul class="yt-dropdown-menu">
+			<li class="yt-dropdown-menu-item">Action</li>
+			<li class="yt-dropdown-menu-item">Another action</li>
+			<li class="yt-dropdown-menu-item yt-dropdown-submenu">
+				More actions
+				<ul class="yt-dropdown-menu submenu-dropup">
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+		<div style="float:left;margin:5px;">
+		<h6>Left submenu</h6>
+		<ul class="yt-dropdown-menu">
+			<li class="yt-dropdown-menu-item">Action</li>
+			<li class="yt-dropdown-menu-item">Another action</li>
+			<li class="yt-dropdown-menu-item yt-dropdown-submenu">
+				More actions
+				<ul class="yt-dropdown-menu submenu-left">
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+					<li class="yt-dropdown-menu-item">Action</li>
+					<li class="yt-dropdown-menu-item">Another action</li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+		<h6 style="clear:both">Default</h6>
+		<pre class="prettyprint">
+&lt;ul class="yt-dropdown-menu">
+	&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+	&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;li class="divider">&lt;/li>
+	&lt;li class="yt-dropdown-menu-item yt-dropdown-submenu">
+		More actions
+		&lt;ul class="yt-dropdown-menu">
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+		&lt;/ul>
+	&lt;/li>
+&lt;/ul>
+		</pre>
+		<h6>Dropup</h6>
+		<pre class="prettyprint">
+&lt;ul class="yt-dropdown-menu">
+	&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+	&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;li class="divider">&lt;/li>
+	&lt;li class="yt-dropdown-menu-item yt-dropdown-submenu">
+		More actions
+		&lt;ul class="yt-dropdown-menu submenu-dropup">
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+		&lt;/ul>
+	&lt;/li>
+&lt;/ul>
+		</pre>
+		<h6>Left submenu</h6>
+		<pre class="prettyprint">
+&lt;ul class="yt-dropdown-menu">
+	&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+	&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+	&lt;li class="divider">&lt;/li>
+	&lt;li class="yt-dropdown-menu-item yt-dropdown-submenu">
+		More actions
+		&lt;ul class="yt-dropdown-menu submenu-left">
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/&lt;li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Action&lt;/li>
+			&lt;li class="yt-dropdown-menu-item">Another action&lt;/li>
+		&lt;/ul>
+	&lt;/li>
+&lt;/ul>
+		</pre>
+		<h1 id="labels">Labels</h1>
+		<span class="label">Default</span>
+		<span class="label success">Success</span>
+		<span class="label warning">Warning</span>
+		<span class="label important">Important</span>
+		<span class="label info">Info</span>
+		<span class="label inverse">Inverse</span>
+		<pre class="prettyprint">
+&lt;span class="label">Default&lt;/span>
+&lt;span class="label success">Success&lt;/span>
+&lt;span class="label warning">Warning&lt;/span>
+&lt;span class="label important">Important&lt;/span>
+&lt;span class="label info">Info&lt;/span>
+&lt;span class="label inverse">Inverse&lt;/span>
+		</pre>
+		<h1 id="inputs">Inputs</h1>
+		<h2>Text inputs</h2>
+		<input type="text" class="yt-search-input"/>
+		<pre class="prettyprint">
+&lt;input type="text" class="yt-search-input"/>
+		</pre>
+		<h2>Text areas</h2>
+		<textarea class="yt-search-input"></textarea>
+		<pre class="prettyprint">
+&lt;textarea class="yt-search-input">&lt;/textarea>
+		</pre>
+		<h2>Unified text input and submit button</h2>
+		<div class="yt-button-group">
+			<input type="text" class="yt-search-input"/>
+			<input type="submit" class="yt-button yt-submit" value="" />
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-button-group">
+	&lt;input type="text" class="yt-search-input"/>
+	&lt;input type="submit" class="yt-button yt-submit" value="" />
+&lt;/div>
+		</pre>
+		<h2>Disabled text inputs</h2>
+		<input type="text" class="yt-search-input" placeholder="Disabled input" disabled/>
+		<pre class="prettyprint">
+&lt;input type="text" class="yt-search-input" disabled/>
+		</pre>
+		<h2>Validation states</h2>
+		Warning : <input type="text" class="yt-search-input warning"/><br/>
+		Error : <input type="text" class="yt-search-input error"/><br/>
+		Info : <input type="text" class="yt-search-input info"/><br/>
+		Success : <input type="text" class="yt-search-input success"/><br/>
+		<pre class="prettyprint">
+&lt;input type="text" class="yt-search-input warning"/>
+&lt;input type="text" class="yt-search-input error"/>
+&lt;input type="text" class="yt-search-input info"/>
+&lt;input type="text" class="yt-search-input success"/>
+		</pre>
+		<h1 id="contentboxes">Content boxes</h1>
+		<p>Put your content into nice boxes !</p>
+		<div class="yt-container">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-container">
+	Your content here...
+&lt;/div>
+		</pre>
+		<h1 id="tooltips">Tooltips</h1>
+		<p><span class="label info">Note </span>The tooltips work on all elements, just make sure to include the tooltip into the title attribute.</p>
+		<h2>Pure CSS (No JS)</h2>
+		<p><span class="label info">Note</span>The JS version still looks better and hides the system's tooltip, but the CSS version is lightweight and doesn't need any JS.
+		<p><span class="label warning">Warning</span>This CSS version also has issues on IE.</p>
+		<div class="yt-container">
+			<button class="yt-button yt-css-tooltip" title="Super tooltip">Tooltip</button>
+			<button class="yt-button yt-css-tooltip" title="Another super tooltip">Another button with tooltip</button>
+			<p>
+				The domestic <abbr class="yt-css-tooltip" title="Dogs are cute pets">dog</abbr> is a subspecies of the <abbr class="yt-css-tooltip" title="Wolves are... wolves">grey wolf</abbr>.
+			</p>
+		</div>
+		<pre class="prettyprint">
+&lt;a href="#" class="yt-css-tooltip" title="Tooltip content">Link&lt;/a>
+		</pre>
+		<h2>With JS plugin</h2>
+		<p>The JS version is powered by JQuery UI. Just add the class yt-tooltip.</p>
+		<div class="yt-container">
+			<button class="yt-button yt-tooltip" title="Super tooltip">Tooltip</button>
+			<button class="yt-button yt-tooltip" title="Another super tooltip">Another button with tooltip</button>
+			<p>
+				The domestic <abbr class="yt-tooltip" title="Dogs are cute pets">dog</abbr> is a subspecies of the <abbr class="yt-tooltip" title="Wolves are... wolves">grey wolf</abbr>.
+			</p>
+		</div>
+		<pre class="prettyprint">
+&lt;a href="#" class="yt-tooltip" title="Tooltip content">Link&lt;/a>
+		</pre>
+		<h1 id="progressbars">Progress bar</h1>
+		<h2>Using HTML 5 progress element</h2>
+		<p><span class="label warning">Warning</span>These examples doesn't work in IE 9 or lower, they work in IE 10. For cross-browser support, use the div progress bar.</p>
+		<p>Default state</p>
+		<progress class="yt-progress-bar" value="75" max="100"></progress>
+		<p>Success state</p>
+		<progress class="yt-progress-bar success" value="75" max="100"></progress>
+		<p>Warning state</p>
+		<progress class="yt-progress-bar warning" value="75" max="100"></progress>
+		<p>Error state</p>
+		<progress class="yt-progress-bar error" value="75" max="100"></progress>
+		<p>Inderminate</p>
+		<progress class="yt-progress-bar"></progress>
+		<pre class="prettyprint">
+&lt;progress class="yt-progress-bar" value="75" max="100">&lt;/progress>
+&lt;progress class="yt-progress-bar success" value="75" max="100">&lt;/progress>
+&lt;progress class="yt-progress-bar warning" value="75" max="100">&lt;/progress>
+&lt;progress class="yt-progress-bar error" value="75" max="100">&lt;/progress>
+&lt;progress class="yt-progress-bar">&lt;/progress>
+		</pre>
+		<h2>Using div element</h2>
+		<p><span class="label info">Note</span>This is cross browser compatible.</p>
+		<p>Default state</p>
+		<div class="yt-cb-progress-bar">
+			<span style="width:75%"></span>
+		</div>
+		<p>Success state</p>
+		<div class="yt-cb-progress-bar success">
+			<span style="width:75%"></span>
+		</div>
+		<p>Warning state</p>
+		<div class="yt-cb-progress-bar warning">
+			<span style="width:75%"></span>
+		</div>
+		<p>Error state</p>
+		<div class="yt-cb-progress-bar error">
+			<span style="width:75%"></span>
+		</div>
+		<p>Inderminate</p>
+		<div class="yt-cb-progress-bar" data-progress="indetermined"></div>
+		<pre class="prettyprint">
+&lt;div class="yt-cb-progress-bar">
+	&lt;span style="width:75%">&lt;/span>
+&lt;/div>
+&lt;div class="yt-cb-progress-bar success">
+	&lt;span style="width:75%">&lt;/span>
+&lt;/div>
+&lt;div class="yt-cb-progress-bar warning">
+	&lt;span style="width:75%">&lt;/span>
+&lt;/div>
+&lt;div class="yt-cb-progress-bar error">
+	&lt;span style="width:75%">&lt;/span>
+&lt;/div>
+&lt;div class="yt-cb-progress-bar" data-progress="indetermined">&lt;/div>
+		</pre>
+		<h1 id="checkboxes">Checkboxes</h1>
+		<p><span class="label info">Note</span>These checkboxes are styled only with pure CSS, without JS.</p>
+		<div class="yt-container">
+		<label class="yt-input-control checkbox">
+			<input type="checkbox"/>
+			<span class="yt-input-label">A checkbox</span>
+		</label>
+		<br/>
+		<label class="yt-input-control checkbox">
+			<input type="checkbox" checked/>
+			<span class="yt-input-label">Checked checkbox</span>
+		</label>
+		<br/>
+		 <label class="yt-input-control checkbox">
+			<input type="checkbox" disabled/>
+			<span class="yt-input-label">Disabled checkbox</span>
+		</label>
+		<br/>
+		 <label class="yt-input-control checkbox">
+			<input type="checkbox" disabled checked/>
+			<span class="yt-input-label">Disabled checked checkbox</span>
+		</label>
+		</div>
+		<pre class="prettyprint">
+&lt;label class="yt-input-control checkbox">
+	&lt;input type="checkbox"/>
+	&lt;span class="yt-input-label">A checkbox&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control checkbox">
+	&lt;input type="checkbox" checked/>
+	&lt;span class="yt-input-label">Checked checkbox&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control checkbox">
+	&lt;input type="checkbox" disabled/>
+	&lt;span class="yt-input-label">Disabled checkbox&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control checkbox">
+	&lt;input type="checkbox" disabled checked/>
+	&lt;span class="yt-input-label">Disabled checked checkbox&lt;/span>
+&lt;/label>
+		</pre>
+		<h1 id="radios">Radios</h1>
+		<p><span class="label info">Note</span>These checkboxes are styled only with pure CSS, without JS.</p>
+		<div class="yt-container">
+		<label class="yt-input-control radio">
+			<input type="radio" name="radio"/>
+			<span class="yt-input-label">Radio</span>
+		</label>
+		<br/>
+		<label class="yt-input-control radio">
+			<input type="radio" checked name="radio"/>
+			<span class="yt-input-label">Checked radio</span>
+		</label>
+		<br/>
+		<label class="yt-input-control radio">
+			<input type="radio" disabled/>
+			<span class="yt-input-label">Disabled radio</span>
+		</label>
+		<br/>
+		<label class="yt-input-control radio">
+			<input type="radio" disabled checked/>
+			<span class="yt-input-label">Checked disabled radio</span>
+		</label>
+	</div>
+		<pre class="prettyprint">
+&lt;label class="yt-input-control radio">
+	&lt;input type="radio"/>
+	&lt;span class="yt-input-label">A radio&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control radio">
+	&lt;input type="radio" checked/>
+	&lt;span class="yt-input-label">Checked radio&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control radio">
+	&lt;input type="radio" disabled/>
+	&lt;span class="yt-input-label">Disabled radio&lt;/span>
+&lt;/label>
+&lt;label class="yt-input-control radio">
+	&lt;input type="radio" disabled checked/>
+	&lt;span class="yt-input-label">Disabled checked radio&lt;/span>
+&lt;/label>
+		</pre>
+		<h1 id="scrollbars">Scrollbars</h1>
+		<p><span class="label info">Note</span>These scrollbars only work in webkit browsers. Only the scrollbars are included, not the containers. The scrollbars can be applied to all elements.</p>
+		<h6>Default</h6>
+		<div class="yt-scrollbar" style="height:100px;width:400px;border:1px solid #D1D1D1;overflow:scroll;">
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		</div>
+		<h6>Dark</h6>
+		<div class="yt-scrollbar yt-scrollbar-dark" style="height:100px;width:400px;border:1px solid #000;overflow:scroll;background-color:#555;">
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.</p>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-scrollbar">
+Your stuff here...
+&lt;/div>
+&lt;div class="yt-scrollbar yt-scrollbar-dark">
+Your stuff here...
+&lt;/div>
+		</pre>
+		<h1 id="notifications">Notifications</h1>
+		<p>Make your notifications beautiful.</p>
+		<div class="yt-container">
+			<div class="yt-notification info">
+				<div class="yt-notification-icon"></div>
+				<span>This is an information.</span>
+				<div class="yt-notification-close" data-dismiss="alert"></div>
+			</div>
+			<div class="yt-notification success">
+				<div class="yt-notification-icon"></div>
+				<span>This is a success message.</span>
+				<div class="yt-notification-close" data-dismiss="alert"></div>
+			</div>
+			<div class="yt-notification warning">
+				<div class="yt-notification-icon"></div>
+				<span>This is a warning.</span>
+				<div class="yt-notification-close" data-dismiss="alert"></div>
+			</div>
+			<div class="yt-notification important">
+				<div class="yt-notification-icon"></div>
+				<span>This is an important information.</span>
+				<div class="yt-notification-close" data-dismiss="alert"></div>
+			</div>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-notification info">
+	&lt;div class="yt-notification-icon">&lt;/div>
+	&lt;span>This is an information.&lt;/span>
+	&lt;div class="yt-notification-close" data-dismiss="alert">&lt;/div>
+&lt;/div>
+&lt;div class="yt-notification success">
+	&lt;div class="yt-notification-icon">&lt;/div>
+	&lt;span>This is a success message.&lt;/span>
+	&lt;div class="yt-notification-close" data-dismiss="alert">&lt;/div>
+&lt;/div>
+&lt;div class="yt-notification warning">
+	&lt;div class="yt-notification-icon">&lt;/div>
+	&lt;span>This is a warning.&lt;/span>
+	&lt;div class="yt-notification-close" data-dismiss="alert">&lt;/div>
+&lt;/div>
+&lt;div class="yt-notification important">
+	&lt;div class="yt-notification-icon">&lt;/div>
+	&lt;span>This is an important information.&lt;/span>
+	&lt;div class="yt-notification-close" data-dismiss="alert">&lt;/div>
+&lt;/div>
+		</pre>
+		<h1 id="thumbs">Thumbnails</h1>
+		<div class="yt-thumb">
+			<img src="img/thumbimage.png">
+			<span class="yt-thumb-title">Thumbnail title</span>
+		</div>
+		<pre class="prettyprint">
+&lt;div class="yt-thumb">
+	&lt;img src="yourimageurl"/>
+	&lt;span class="yt-thumb-title">Thumbnail title&lt;/span>
+&lt;/div>
+		</pre>
+		<h1 id="navigation">Navigation</h1>
+		<h2>Horizontal</h1>
+		<div class="yt-container">
+			<ul class="yt-navigation-dark">
+				<li>A page</li>
+				<li>Another page</li>
+				<li class="selected">Current page</li>
+				<li>Another page</li>
+			</ul>
+		</div>
+		<pre class="prettyprint">
+&lt;ul class="yt-navigation-dark">
+	&lt;li>A page&lt;/li>
+	&lt;li>Another page&lt;/li>
+	&lt;li class="selected">Current page&lt;/li>
+	&lt;li>Another page&lt;/li>
+&lt;/ul>
+		</pre>
+		<h2>Vertical</h2>
+		<div class="yt-container">
+			<ul class="yt-navigation-dark vertical-nav">
+				<li>A page</li>
+				<li>Another page</li>
+				<li class="selected">Current page</li>
+			</ul>
+		</div>
+		<pre class="prettyprint">
+&lt;ul class="yt-navigation-dark vertical-nav">
+	&lt;li>A page&lt;/li>
+	&lt;li>Another page&lt;/li>
+	&lt;li class="selected">Current page&lt;/li>
+	&lt;li>Another page&lt;/li>
+&lt;/ul>
+		</pre>
+		<h2>Navigation lists</h2>
+		<div class="yt-container">
+			<ul class="yt-navigation-list">
+			    <li class="yt-nav-list-header">List title</li>
+			    <li class="selected">Selected page</li>
+			    <li>Another page</li>
+			    <li class="yt-nav-list-header">Another list title</li>
+			    <li>A page</li>
+			    <li>Another page</li>
+			    <li class="divider"></li>
+			    <li>Another page</li>
+		    </ul>
+		</div>
+		<pre class="prettyprint">
+&lt;ul class="yt-navigation-list">
+	&lt;li class="yt-nav-list-header">List title&lt;/li>
+	&lt;li class="selected">Selected page&lt;/li>
+	&lt;li>Another page&lt;/li>
+	&lt;li class="yt-nav-list-header">Another list title&lt;/li>
+	&lt;li>A page&lt;/li>
+	&lt;li>Another page&lt;/li>
+	&lt;li class="divider">&lt;/li>
+	&lt;li>Another page&lt;/li>
+&lt;/ul>
+		</pre>
+	    <h1 id="tabs">Tabs</h1>
+	    <p><span class="label info">Note</span>Enable/Disable this component in <code>jquery-ui-config.js</code>.</p>
+	    <h2>Tabs on the top</h2>
+	    <div class="tabbable"><div>
+		    <ul class="yt-tabs">
+		    	<li><a href="#about">About</a></li>
+		    	<li><a href="#share">Share</a></li>
+		    	<li><a href="#addto">Add to</a></li>
+		    </ul>
+		    <div class="tab-pane" id="about">Pane 1</div>
+		    <div class="tab-pane" id="share">Pane 2</div>
+		    <div class="tab-pane" id="addto">Pane 3</div>
+		</div></div>
+		<pre class="prettyprint">
+&lt;div class="tabbable">&lt;div>
+    &lt;ul class="yt-tabs">
+    	&lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#share">Share&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#addto">Add to&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;div class="tab-pane" id="about">Pane 1&lt;/div>
+    &lt;div class="tab-pane" id="share">Pane 2&lt;/div>
+    &lt;div class="tab-pane" id="addto">Pane 3&lt;/div>
+&lt;/div>&lt;/div>
+		</pre>
+	    <h2>Tabs in other direction</h2>
+		<div class="tabbable tabs-bottom"><div>
+			<div class="tab-pane" id="about">Pane 1</div>
+			<div class="tab-pane" id="share">Pane 2</div>
+			<div class="tab-pane" id="addto">Pane 3</div>
+			<ul class="yt-tabs">
+				<li><a href="#about">About</a></li>
+				<li><a href="#share">Share</a></li>
+				<li><a href="#addto">Add to</a></li>
+		    </ul>
+		</div></div>
+		<pre class="prettyprint">
+&lt;div class="tabbable tabs-bottom">&lt;div>
+    &lt;div class="tab-pane" id="about">Pane 1&lt;/div>
+    &lt;div class="tab-pane" id="share">Pane 2&lt;/div>
+    &lt;div class="tab-pane" id="addto">Pane 3&lt;/div>
+    &lt;ul class="yt-tabs">
+    	&lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#share">Share&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#addto">Add to&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>&lt;/div>
+		</pre>
+	    <div class="tabbable tabs-left"><div>
+		    <ul class="yt-tabs">
+		    	<li><a href="#about">About</a></li>
+		    	<li><a href="#share">Share</a></li>
+		    	<li><a href="#addto">Add to</a></li>
+		    </ul>
+		    <div class="tab-pane" id="about">Pane 1</div>
+		    <div class="tab-pane" id="share">Pane 2</div>
+		    <div class="tab-pane" id="addto">Pane 3</div>
+		</div></div>
+		<pre class="prettyprint" style="clear:both">
+&lt;div class="tabbable tabs-left">&lt;div>
+    &lt;ul class="yt-tabs">
+    	&lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#share">Share&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#addto">Add to&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;div class="tab-pane" id="about">Pane 1&lt;/div>
+    &lt;div class="tab-pane" id="share">Pane 2&lt;/div>
+    &lt;div class="tab-pane" id="addto">Pane 3&lt;/div>
+&lt;/div>&lt;/div>
+		</pre>
+		<div class="tabbable tabs-right"><div>
+		    <ul class="yt-tabs">
+		    	<li><a href="#about">About</a></li>
+		    	<li><a href="#share">Share</a></li>
+		    	<li><a href="#addto">Add to</a></li>
+		    </ul>
+		    <div class="tab-pane" id="about">Pane 1</div>
+		    <div class="tab-pane" id="share">Pane 2</div>
+		    <div class="tab-pane" id="addto">Pane 3</div>
+		</div></div>
+		<pre class="prettyprint" style="clear:both">
+&lt;div class="tabbable tabs-right">&lt;div>
+    &lt;ul class="yt-tabs">
+    	&lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#share">Share&lt;/a>&lt;/li>
+    	&lt;li>&lt;a href="#addto">Add to&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;div class="tab-pane" id="about">Pane 1&lt;/div>
+    &lt;div class="tab-pane" id="share">Pane 2&lt;/div>
+    &lt;div class="tab-pane" id="addto">Pane 3&lt;/div>
+&lt;/div>&lt;/div>
+		</pre>
+		</div>
+	</body>
+</html>
